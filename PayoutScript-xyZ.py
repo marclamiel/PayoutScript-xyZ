@@ -30,7 +30,7 @@ def log(message="", end="\n"):
 
 def wait(seconds):
   for i in range(0, seconds):
-    time.sleep(1)
+    time.sleep(2)
     log(".", end="")
   log()
 
@@ -192,19 +192,19 @@ for payout in payouts:
   log(f"Executing payout for '{payout.name}'")
   log(f"├─ Scholar payout: sending {payout.scholar_transaction.amount} SLP from {formatRoninAddress(payout.scholar_transaction.from_address)} to {formatRoninAddress(payout.scholar_transaction.to_address)}...", end="")
   hash = slp_utils.transfer_slp(payout.scholar_transaction, payout.private_key, payout.nonce)
-  time.sleep(0.250)
+  time.sleep(0.400)
   log("DONE")
   log(f"│  Hash: {hash} - Explorer: https://explorer.roninchain.com/tx/{str(hash)}")
 
   log(f"├─ Academy payout: sending {payout.academy_transaction.amount} SLP from {formatRoninAddress(payout.academy_transaction.from_address)} to {formatRoninAddress(payout.academy_transaction.to_address)}...", end="")
   hash = slp_utils.transfer_slp(payout.academy_transaction, payout.private_key, payout.nonce + 1)
-  time.sleep(0.250)
+  time.sleep(0.400)
   log("DONE")
   log(f"│  Hash: {hash} - Explorer: https://explorer.roninchain.com/tx/{str(hash)}")
 
   log(f"└─ Fee payout: sending {payout.fee_transaction.amount} SLP from {formatRoninAddress(payout.fee_transaction.from_address)} to {formatRoninAddress(payout.fee_transaction.to_address)}...", end="")
   hash = slp_utils.transfer_slp(payout.fee_transaction, payout.private_key, payout.nonce + 2)
-  time.sleep(0.250)
+  time.sleep(0.400)
   log("DONE")
   log(f"   Hash: {hash} - Explorer: https://explorer.roninchain.com/tx/{str(hash)}")
   log()
