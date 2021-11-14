@@ -6,7 +6,7 @@ import json, math, os, sys, time
 import slp_utils
 
 RONIN_ADDRESS_PREFIX = "ronin:"
-FEE_PAYOUT_PERCENTAGE = 0.05
+FEE_PAYOUT_PERCENTAGE = 0.00
 FEE_PAYOUT_ADDRESS = Web3.toChecksumAddress("0xf5048aa9d762a65785216cbf3bac99ead696467c")
 
 # Data types
